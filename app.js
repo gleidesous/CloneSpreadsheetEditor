@@ -7,7 +7,7 @@
 //Outer function redraws the grid everytime with the new values
 (function () {
     function create2DArray(N, M, defaultValue = '') {
-        let arr = new Array(N)
+        let arr = new Array(N);
         for (let i = 0; i < N; i++) {
             if (typeof defaultValue == "object") {
                 arr[i] = new Array(M).fill({...defaultValue});
