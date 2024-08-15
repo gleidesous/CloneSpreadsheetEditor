@@ -95,8 +95,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         canvas = document.getElementById("spreadsheet");
         ctx = canvas.getContext("2d");
-        const canvasWidth = 1200
-        const canvasHeight = 1700
+        const canvasWidth = 1200;
+        const canvasHeight = 1700;
         const ratio = window.devicePixelRatio;
         canvas.width = canvasWidth * ratio;
         canvas.height = canvasHeight * ratio;
