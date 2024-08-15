@@ -2,7 +2,7 @@
 // desousag@bc.edu
 // 08/01/2024
 
-//video time: 1:05:10
+//video time: 1:07:00
 
 //Outer function redraws the grid everytime with the new values
 (function () {
@@ -152,6 +152,7 @@
         if (mode == "NORMAL") {
             handleNormalArrowKeys(key)
         }
+        DrawFunctions.drawGrid();
     }
 
     document.addEventListener("keydown", function(event) {
