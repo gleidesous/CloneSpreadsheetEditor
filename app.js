@@ -22,7 +22,7 @@
     let mode = "NORMAL" //Can be NORMAL or SEARCH
 
     let selectedCell = {
-        row: 1, col: 1 
+        row: 3, col: 3 
     }
     let selectedCellRange = {
         startRow: selectedCell.row,
@@ -95,8 +95,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         canvas = document.getElementById("spreadsheet");
         ctx = canvas.getContext("2d");
-        const canvasWidth = 2000;
-        const canvasHeight = 2000;
+        const canvasWidth = 1200;
+        const canvasHeight = 1700;
         const ratio = window.devicePixelRatio;
         canvas.width = canvasWidth * ratio;
         canvas.height = canvasHeight * ratio;
