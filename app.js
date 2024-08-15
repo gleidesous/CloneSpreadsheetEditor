@@ -155,7 +155,7 @@
     }
 
     document.addEventListener("keydown", function(event) {
-        let key = event.key
+        let key = event.key;
         if (event.shiftKey && ["ArrowRight", "ArrowLeft", "ArrowUp", "ArrowDown"].includes(key)) {
             event.preventDefault()
             // handle shift key press
