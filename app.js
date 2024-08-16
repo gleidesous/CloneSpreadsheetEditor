@@ -2,7 +2,7 @@
 // desousag@bc.edu
 // 08/01/2024
 
-//video time: 1:40:00
+//video time: 1:43:00
 
 //Outer function redraws the grid everytime with the new values
 (function () {
@@ -135,8 +135,24 @@
             let rangeStartRow = Math.min(selectedCellRange.endRow, selectedCellRange.startRow);
 
             const pos = getCellPosition(rangeStartRow, rangeStartCol);
+            
             selectedRangeDiv.style.left = `${pos.x + 1}px`
             selectedRangeDiv.style.top = `${pos.y + 1}px`;
+
+            let rangeWidth = 0;
+            let rangeHeight = 0;
+            let startRow = Math.min(selectedCellRange.startRow, selectedCellRange.endRow);
+            let endRow = Math.max(selectedCellRange.startRow, selectedCellRange.endRow);
+            for (let r = startRow; r <= endRow; r++) {
+                rangeHeight += rowHeights[r];
+            }
+
+            let startCol = Math.min(selectedCellRange.startCol, selectedCellRange.endCol);
+            let endCol = Math.max(selectedCellRange.startCol, selectedCellRange.endCol);
+            for (let c = startCol; c <= endCol; c++) {
+                rangeWidth += colWidths[c];
+            }
+
 
 
         }
