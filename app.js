@@ -131,6 +131,7 @@
         function drawSelectedCellRange() {
             const selectedRangeDiv = document.getElementById("selectedRange");
             // x, y, width, height
+            selectedRangeDiv.style.display = "block";
             let rangeStartCol = Math.min(selectedCellRange.endCol, selectedCellRange.startCol);
             let rangeStartRow = Math.min(selectedCellRange.endRow, selectedCellRange.startRow);
 
@@ -153,6 +154,12 @@
                 rangeWidth += colWidths[c];
             }
 
+            if (selectedCellRange.startRow != selectedCellRange.endRow || selectedCellRange.startCol != selectedCellRange.endCol) {
+                selectedRangeDiv.style.border = "1px solid rgba(0,0,255,0.8)";
+                selectedRangeDiv.style.background = "rgba(0,0,255,0.5)";
+            } else {
+                selectedRangeDiv.style.background = "rgba(0,0,255,0)";
+            }
 
 
         }
@@ -161,7 +168,8 @@
             ctx.clearRect(0,0, canvas.width, canvas.height);
             ctx.strokeStyle = 'rgba(0,0,0,0.2)';
             drawCells();
-            drawSelectedCellBorder()
+            drawSelectedCellBorder();
+            drawSelectedCellRange();
 
         }
         return {drawGrid};
@@ -277,6 +285,7 @@
         if (mode == "NORMAL") {
             handleNormalShiftArrowKeys(key)
         }
+        DrawFunctions.drawGrid();
     }
 
     document.addEventListener("keydown", function(event) {
